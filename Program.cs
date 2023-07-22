@@ -4,8 +4,20 @@ using System.Collections.Generic;
 
 public class Program{
   static void Main(){
+    //Teste callback
+    Calculator calculadora = new Calculator();
+
+    CallBackDelegate callBack = DisplayResult;
+
+    calculadora.Sum(2, 2, callBack);
+    calculadora.Multiply(3, 5, callBack);
+
+    static void DisplayResult(int result){
+      Console.WriteLine($"O resultado é: {result}");
+    }
+    
     //Teste Design Subscriber
-    var publisher   = new NewsPublisher();
+    /* var publisher   = new NewsPublisher();
     var subscriber1 = new MsgSubscriber("Subscriber 01");
     var subscriber2 = new MsgSubscriber("Subscriber 02");
 
@@ -17,7 +29,8 @@ public class Program{
 
     publisher.RemoveSubscriber(subscriber2);
 
-    publisher.PublishNews("Mensagem 3");  
+    publisher.PublishNews("Mensagem 3"); */  
+    
     //Teste DLLs
     //DllControl onTime = new DllControl();
 
