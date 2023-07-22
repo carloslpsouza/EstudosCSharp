@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Program{
   static void Main(){
     //Teste callback
-    Calculator calculadora = new Calculator();
+    /* Calculator calculadora = new Calculator();
 
     CallBackDelegate callBack = DisplayResult;
 
@@ -14,22 +14,27 @@ public class Program{
 
     static void DisplayResult(int result){
       Console.WriteLine($"O resultado é: {result}");
-    }
+    } */
     
     //Teste Design Subscriber
-    /* var publisher   = new NewsPublisher();
+    var publisher   = new NewsPublisher();
     var subscriber1 = new MsgSubscriber("Subscriber 01");
     var subscriber2 = new MsgSubscriber("Subscriber 02");
 
     publisher.AddSubscriber(subscriber1);
     publisher.AddSubscriber(subscriber2);
 
-    publisher.PublishNews("Mensagem 1");
-    publisher.PublishNews("Mensagem 2");
+    Console.WriteLine("Digite mensagem 1 de 2: ");
+    var InputTest1 = Console.ReadLine();
+    Console.WriteLine("Digite mensagem 2 de 2: ");
+    var InputTest2 = Console.ReadLine();
+
+    publisher.PublishNews(InputTest1 ?? "Nulo");
+    publisher.PublishNews(InputTest2 ?? "Nulo");
 
     publisher.RemoveSubscriber(subscriber2);
 
-    publisher.PublishNews("Mensagem 3"); */  
+    publisher.PublishNews("Mensagem 3");
     
     //Teste DLLs
     //DllControl onTime = new DllControl();
